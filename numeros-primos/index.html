@@ -9,9 +9,39 @@
 <body>
     <h1>Suma de Números Primos</h1>
     <button onclick="calcularSumaPrimos()">Calcular Suma de Números Primos</button>
-    <div id="resultados"></div>
+    <div id="resultados">
+        <script>
 
-  
+            function calcularSumaPrimos(){
+                // Definimos un contador para el while y una suma para luego ir sumando los primos
+                let cont = 0;
+                let suma = 0;
+        
+                while(cont < 15){ // De esta forma el bucle dará 15 vueltas
+                    num = parseInt(prompt(`Número ${cont + 1}:`)); // Pedimos los números
+                    let primo = true;
+
+                    // Comprobamos los números que son o no primos
+                    for(let i = 2; i < num; i++){
+                        if(num % i === 0){ // Si el resto de la división num/i es 0, el número no será primo
+                            primo = false;
+                        }
+                    }
+
+                    // Si se ha comprobado que el número es primo, se suma a la variable definida al principio
+                    if(primo){
+                        suma += num;
+                    }
+                    cont ++; // Aumentamos el contador de 1 en 1
+                }
+
+                document.write(`La suma final es: ${suma}`); // Mostramos el resultado
+            }
+            
+        </script>
+    </div>
+
+    
 </body>
 
 </html>
